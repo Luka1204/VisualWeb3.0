@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <%-include('templates/meta');%>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Visual</title>
+</head>
+
+<body>
+    <header>
+       <%-include('templates/navbar.ejs')%>
+    </header>
+    <main>
+        <div class="mainPage">
+          <div class="container pt-5">
+            <h1 class="titleOne">VISUAL</h1>
+            <h2 class="subTitleOne">Desarrollo Web</h2>
+            <div class="contenedorAnim">
+              <ul class="listaTexto">
+                  <li>Inovacion</li>
+                  <li>Inventiva</li>
+                  <li>Eficiencia</li>
+              </ul>
+          </div>
+          </div>
+            
+        </div>
+
+        <%-include('templates/quienes.ejs')%>
+       
+        <%-include('templates/servicios.ejs')%>
+        
+
+        <%-include('templates/preguntas.ejs')%>
+        
+        <%-include('templates/contacto.ejs')%>
+        
+    </main>
+    <footer class="bg-dark">
+      <h5 class="mx-auto text-center text-white p-lg-5">Desarrollado por &copy;Visual</h5>
+    </footer>
+    <%-include('templates/script');%>
+<script>
+
+  formContacto = new Vue({
+    el:'#contactoForm',
+    vuetify:new Vuetify(),
+    data:{
+      nombre:'',
+      apellido:'',
+      email:'',
+      telefono:'',
+      mensaje:'',
+      item:[]
+    },
+    created(){},
+    methods:{
+      send: async function(){
+        let dataMensaje = {
+          nombre:formContacto.nombre,
+          apellido:formContacto.apellido,
+          email:formContacto.email,
+          telefono:formContacto.telefono,
+          mensaje:formContacto.mensaje
+        }
+        await axios.post('/contactar',dataMensaje).then((res)=>{
+          console.log(res)
+        }).catch((err)=>{
+          console.log(err)
+        })
+      }
+    },
+  })
+ 
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="js/scroll.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<% if (typeof alert != "undefined")  { %>
+  <script>
+  Swal.fire({
+    title:'<%= alertTitle %>',
+    text:'<%= alertMessage %>',
+    icon:'<%= alertIcon %>',
+    showConfirmButton: <%= showConfirmButton %>,
+    timer: <%= timer %>
+  }).then(()=>{
+    window.location='/<%= ruta %>'
+  })
+  </script>
+<% } %>
+  
+</body>
+</html>

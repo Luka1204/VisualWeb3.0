@@ -1,0 +1,34 @@
+<div id="contactoForm" class="contactanos bg-dark" >
+    <h1 class="titles text-white">Contactanos</h1>
+    <div class="conatiner-fluid">
+      <form action="/" method="post" class="formularioContacto">
+        <div class="row">
+          <div class="col">
+            <strong>Nombre:</strong>
+            <v-text-field v-model="nombre" class="bg-white p-3 rounded-2 text-bg-dark" name="nombre" placeholder="Nombre" type="text"></v-text-field>
+          </div>
+          <div class="col">
+            <strong>Apellido:</strong>
+            <v-text-field v-model="apellido" class="bg-white p-3 rounded-2 text-bg-dark" name="apellido" placeholder="Apellido" type="text"></v-text-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <strong>Email:</strong>
+            <v-text-field type="email" class="bg-white p-3 rounded-2 text-bg-dark" name="email" v-model="email" placeholder="Email" ></v-text-field>
+          </div>
+          <div class="col">
+            <strong>Telefono:</strong>
+            <v-text-field type="text " class="bg-white p-3 rounded-2 text-bg-dark" v-model="telefono" name="telefono" placeholder="Telefono" ></v-text-field>
+          </div>
+        </div>
+        <div class="row">
+          <strong>Su Mensaje</strong>
+          <v-textarea v-model="mensaje" class="bg-white p-3 rounded-2 text-bg-dark"  rows="3" width="120px" name="mensaje" placeholder="Mensaje" ><v-/textarea>
+        </div>
+        <div class="row p-3">
+          <button @click="send()" class="btn btn-light" type="submit" >Enviar</button>
+        </div>
+      </form>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<div id="quienesSomos"class="quienesSomos">
+    <h1 class="titles p-lg-5">¿Quienes Somos?</h1>
+    <div class="conatiner-fluid w-75 mx-auto">
+      <div class="row mx-auto">
+        <div class="col">
+          <p>
+            Somos Visual, nos encargamos de crear y diseñar la sitio web ideal para tu proyecto, empresa, pyme, red social o emprendimiento. Como en Visual, el gusto del cliente es lo primero, todas las paginas son realizadas siguiendo sus preferencias, gustos e indicaciones. Nunca damos un trabajo por terminado con un cliente insatisfecho y nos encargamos de brindar soluciones cuando más se las necesiten.
+          </p>
+        </div>
+        <img src="/img/equipo.png"   class="w-75 d-block h-auto" alt="" srcset="">
+      </div>
+      <div class="row my-5">
+        <div class="col">
+          <div class="row">
+            <v-lazy
+            v-model="isActive"
+            :options="{
+              threshold: .5
+            }"
+            min-height="200"
+            transition="fade-transition"
+          >
+              <v-card  class="mx-auto card p-lg-5 border-dark max-width="336">
+                <v-card-title><img width="45%" src="/img/fotoD.png" alt=""></v-card-title>
+
+                  <v-card-text>
+                    <h4>Dante</h4>
+                    <p>Técnico personal y profesional el programación</p>
+                  </v-card-text>
+              </v-card>
+            </v-lazy>
+            <!-- <div class="col">
+              <img width="95%" src="/img/fotoD.png" alt="">
+            </div>
+            <div class="col">
+              <h4>Dante</h4>
+              <p>Técnico personal y profesional el programación</p>
+            </div> -->
+          </div>
+         
+        </div>
+        <div class="col">
+          <div class="row">
+            <v-lazy
+            v-model="isActive"
+            :options="{
+              threshold: .5
+            }"
+            min-height="200"
+            transition="fade-transition"
+          >
+              <v-card  class="mx-auto card p-lg-5 border-dark" max-width="336" outlined elevation="2">
+                <v-card-title><img width="45%" src="/img/fotoL.png" alt=""></v-card-title>
+
+                  <v-card-text>
+                    <h4>Luka</h4>
+                    <p>Técnico personal y profesional el programación</p>
+                  </v-card-text>
+              </v-card>
+            </v-lazy>
+            <div class="col">
+              
+            </div>
+            <div class="col">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

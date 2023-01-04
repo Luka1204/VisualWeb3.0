@@ -1,0 +1,118 @@
+html {
+  scroll-behavior: smooth !important;
+}
+*{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Orbitron', sans-serif;
+}
+.bg-green{
+    background-color: rgb(173, 14, 194);
+    padding: 20px;
+}
+.formularioContacto{
+  width: 50%;
+  margin: 0px auto;
+}
+.hoverLink{
+  transition: all 0.4s ease-in !important;
+  padding:20px ;
+  margin: 10px;
+}
+.hoverLink:hover{
+  transition: all 0.4s ease-in !important;
+  background-color: rgba(230, 66, 194, 0.644);
+  border-radius: 10px;
+}
+#qrcode {
+  width:160px;
+  height:160px;
+  margin-top:15px;
+}
+.titleOne{
+    font-size: 100px;
+    text-align: center;
+    color: white;
+    background-color: rgba(173, 14, 194, 0.699);
+    width: max-content;
+    border-radius: 20px;
+    height: max-content;
+    margin: 0px auto;
+    padding: 10px;
+}
+.subTitleOne{
+    text-align: center;
+    background-color: rgba(173, 14, 194, 0.699);
+    border-radius: 0px 0px 20px 20px;
+    padding:10px;
+    color: white;
+    width: max-content;
+    margin: 0px auto;
+}
+.titles{
+    text-align: center;
+}
+.mainPage{
+  background-image: url(../img/desktop.jpg);
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.397);
+  height: 600px;
+}
+
+.contenedorAnim {
+    display: flex;
+    width: max-content;
+    height: 90px;
+    color: #fff;
+    font-size: 90px;
+    line-height: 90px;
+  
+    justify-content: center;
+    position: relative;
+    top: 80px;
+    right: 0;
+    bottom: 0;
+    left: -10px;
+    margin: auto;
+  
+    overflow: hidden;
+  }
+
+  .listaTexto {
+    list-style: none;
+  
+    animation: cambiar 7s infinite;
+  }
+  
+  .listaTexto,
+  .textoFuturo {
+    margin: 0;
+  }
+  @keyframes cambiar {
+    0% {
+      margin-top: 0px;
+    }
+    20% {
+      margin-top: 0px;
+    }
+    25% {
+      margin-top: -90px;
+    }
+    50% {
+      margin-top: -90px;
+    }
+    55% {
+      margin-top: -180px;
+    }
+    80% {
+      margin-top: -180px;
+    }
+    85% {
+      margin-top: -180px;
+    }
+    95% {
+      margin-top: -180px;
+    }
+    100% {
+      margin-top: 0px;
+    }
+  }

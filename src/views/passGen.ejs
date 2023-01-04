@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+    <meta charset="utf-8">
+        <title>Generador QR con Javascript</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+        <%-include('templates/meta.ejs');%>
+      <link rel="stylesheet" href="/css/styles.css">
+     
+    </head>
+    <body>
+      <header>
+        <%-include('templates/navbar.ejs')%>
+     </header>
+ 
+      <div class="container my-4 bg-dark">
+        <div class="row justify-content-md-center">
+            <div class="col bg-dark text-light border-3 rounded-3">
+                <div class="my-3">
+                  <h1 class="title">Generador de Contraseñas</h1>
+                  <span><b>(*)Ingrese la longitud y caracteristicas de securización de su clave</b></span>
+                </div>
+                <div class="mb-3">
+                    <label for="inputLength" class="form-label">Longitud</label>
+                    <input type="number" id="inputLength" class="form-control text-center" min="1" max="50" value="12" />
+                </div>
+                <div class="form-check my-3">
+                    <input type="checkbox" id="checkbox1" class="form-check-input" />
+                    <label class="form-check-label" for="checkbox1">Incluye números</label>
+                </div>
+                <div class="form-check my-3">
+                    <input type="checkbox" id="checkbox2" class="form-check-input" />
+                    <label class="form-check-label" for="checkbox2">Incluye simbolos</label>
+                </div>
+                <div class="d-grid gap-2 my-3">
+                    <button class="btn btn-primary" id="btnGenerate">Generate Password</button>
+                </div>
+                <hr />
+                <div class="d-grid gap-2 py-3">
+                    <span id="generatedPassword" class="badge bg-success"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/passgen.js"></script>
+      <%-include('templates/script.ejs');%>
+    </body>
+</html>

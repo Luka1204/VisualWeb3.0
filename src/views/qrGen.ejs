@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+    <meta charset="utf-8">
+        <title>Generador QR con Javascript</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+        <%-include('templates/meta.ejs');%>
+      <link rel="stylesheet" href="/css/styles.css">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/qrcode.js"></script>
+     
+    </head>
+    <body>
+      <header>
+        <%-include('templates/navbar.ejs')%>
+     </header>
+      <div class="container mx-auto px-5 py-5">
+        <h1 class="title">Generador QR</h1>
+        <span><b>(*)Ingrese el contenido en la caja de texto y de click a generar</b></span>
+      </div>
+      <div class="container">
+        <div class="row d-block">
+            <div class="col-sm d-block">
+              <input id="text" type="text" value="" class="form-control" style="width:80%" /><br />
+            </div>
+            <div class="col-sm  d-block">
+              <div  id="qrcode" style="width:300px; height:300px; margin-top:15px;"></div>
+            </div>
+            <div class="col-sm  d-block">
+                <button class="btn btn-primary text-white" type="button" id="btnGen" >Generar</button>
+            
+              <a href="/" class="btn btn-secondary text-white">Atras</a>
+        </div>
+            </div>
+        </div>
+      
+
+      <script type="text/javascript">
+      // Genera el objeto qrcode
+      var qrcode = new QRCode(document.getElementById("qrcode"), {
+          width : 256,
+          height : 256
+      });
+      // Funcion para crear el codigo
+      function makeCode () {
+          var elText = document.getElementById("text");
+          if (!elText.value) {
+              alert("Ingresa un texto");
+              elText.focus();
+              return;
+          }
+          qrcode.makeCode(elText.value);
+      }
+    
+      document.getElementById("btnGen").addEventListener('click',()=>{
+        makeCode();
+      })
+      // Al pulsar teclar Enter, genera en QR
+      $("#text").
+          on("blur", function () {
+              makeCode();
+          }).
+          on("keydown", function (e) {
+              if (e.keyCode == 13) {
+                  makeCode();
+              }
+          });
+      </script>
+      <%-include('templates/script.ejs');%>
+    </body>
+</html>
